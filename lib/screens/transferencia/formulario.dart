@@ -1,5 +1,5 @@
-import 'package:bytebank/components/editor.dart';
-import 'package:bytebank/models/transferencia.dart';
+import 'package:flutter_gerenciamento_estado/components/editor.dart';
+import 'package:flutter_gerenciamento_estado/models/transferencia.dart';
 import 'package:flutter/material.dart';
 
 const _tituloAppBar = 'Criando Transferência';
@@ -54,8 +54,8 @@ class FormularioTransferenciaState extends State<FormularioTransferencia> {
   }
 
   void _criaTransferencia(BuildContext context) {
-    final int numeroConta = int.tryParse(_controladorCampoNumeroConta.text);
-    final double valor = double.tryParse(_controladorCampoValor.text);
+    final int numeroConta = int.parse(_controladorCampoNumeroConta.text);
+    final double valor = double.parse(_controladorCampoValor.text);
     if (numeroConta != null && valor != null) {
       final transferenciaCriada = Transferencia(valor, numeroConta);
       Navigator.pop(context, transferenciaCriada);
