@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gerenciamento_estado/models/saldo.dart';
+import 'package:flutter_gerenciamento_estado/models/transferencias.dart';
 import 'package:flutter_gerenciamento_estado/screens/dashboard/dashboard.dart';
-import 'package:flutter_gerenciamento_estado/screens/transferencia/lista.dart';
 import 'package:provider/provider.dart';
 
-void main() => runApp(ChangeNotifierProvider(
-      create: (context) => Saldo(11),
+void main() => runApp(MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => Saldo(10),
+        ),
+        ChangeNotifierProvider(create: (context) => Transferencias())
+      ],
       child: BytebankApp(),
     ));
 

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gerenciamento_estado/models/saldo.dart';
 import 'package:flutter_gerenciamento_estado/screens/dashboard/saldo.dart';
 import 'package:flutter_gerenciamento_estado/screens/deposito/formulario.dart';
 import 'package:flutter_gerenciamento_estado/screens/transferencia/formulario.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_gerenciamento_estado/screens/transferencia/ultimas.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -34,7 +33,8 @@ class Dashboard extends StatelessWidget {
                     builder: (context) => FormularioTransferencia()));
               }, child: Text('Nova transferência'))
             ],
-          )
+          ),
+          UltimasTransferencias()
         ]));
   }
 }
